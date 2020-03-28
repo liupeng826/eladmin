@@ -1,2 +1,3 @@
 1、eladmin.sql  为 eladmin 完整的sql脚本，适合于第一次导入脚本的用户
-2、update.sql 为版本更新中数据库结构变动的脚步内容
+2、workflow.sql 为工作流脚本，第一次运行前需要导入
+3、update.sql 为版本更新中数据库结构变动的脚步内容
