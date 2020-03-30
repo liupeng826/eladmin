@@ -14,8 +14,11 @@
         <module>eladmin-logging</module>
         <module>eladmin-system</module>
         <module>eladmin-tools</module>
-		<module>eladmin-monitor</module>
+        <module>eladmin-monitor</module>
         <module>eladmin-generator</module>
+        <module>snaker-core</module>
+        <module>snaker-spring</module>
+        <module>snaker-hibernate</module>
     </modules>
 
     <name>EL-ADMIN后台管理系统</name>
@@ -38,6 +41,7 @@
         <druid.version>1.1.10</druid.version>
         <commons-pool2.version>2.5.0</commons-pool2.version>
         <mapstruct.version>1.2.0.Final</mapstruct.version>
+        <hibernate.version>5.4.10.Final</hibernate.version>
     </properties>
 
     <dependencies>
@@ -71,11 +75,12 @@
         </dependency>
         <!--Spring boot end-->
 
-        <dependency>
-            <groupId>com.github.snakerflow-starter</groupId>
-            <artifactId>snakerflow-spring-boot-starter</artifactId>
-            <version>1.0.1</version>
-        </dependency>
+        <!-- snakerflow工作流 -->
+        <!--        <dependency>-->
+        <!--            <groupId>com.github.snakerflow-starter</groupId>-->
+        <!--            <artifactId>snakerflow-spring-boot-starter</artifactId>-->
+        <!--            <version>1.0.1</version>-->
+        <!--        </dependency>-->
 
         <!--spring2.0集成redis所需common-pool2-->
         <dependency>

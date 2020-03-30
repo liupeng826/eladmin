@@ -14,9 +14,27 @@
 
     <properties>
         <jjwt.version>0.10.6</jjwt.version>
+        <snaker.version>2.4</snaker.version>
     </properties>
 
     <dependencies>
+        <!-- snakerflow工作流 -->
+        <dependency>
+            <groupId>me.zhengjie</groupId>
+            <artifactId>snaker-core</artifactId>
+            <version>${snaker.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.zhengjie</groupId>
+            <artifactId>snaker-spring</artifactId>
+            <version>${snaker.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.zhengjie</groupId>
+            <artifactId>snaker-hibernate</artifactId>
+            <version>${snaker.version}</version>
+        </dependency>
+
         <!--    代码生成模块    -->
         <dependency>
             <groupId>me.zhengjie</groupId>
@@ -37,10 +55,10 @@
             <version>2.4</version>
         </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-websocket</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
 
         <!--jwt-->
         <dependency>
@@ -65,17 +83,17 @@
             <artifactId>quartz</artifactId>
         </dependency>
 
-		<dependency>
-			<groupId>ch.ethz.ganymed</groupId>
-			<artifactId>ganymed-ssh2</artifactId>
-			<version>build210</version>
-		</dependency>
+        <dependency>
+            <groupId>ch.ethz.ganymed</groupId>
+            <artifactId>ganymed-ssh2</artifactId>
+            <version>build210</version>
+        </dependency>
 
-		<dependency>
-			<groupId>com.jcraft</groupId>
-			<artifactId>jsch</artifactId>
-			<version>0.1.55</version>
-		</dependency>
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.55</version>
+        </dependency>
 
     </dependencies>
 
