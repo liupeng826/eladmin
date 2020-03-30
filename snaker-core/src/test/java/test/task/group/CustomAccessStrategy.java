@@ -17,7 +17,7 @@ package test.task.group;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.snaker.engine.impl.GeneralAccessStrategy;
+import me.zhengjie.impl.GeneralAccessStrategy;
 
 /**
  * @author yuqs

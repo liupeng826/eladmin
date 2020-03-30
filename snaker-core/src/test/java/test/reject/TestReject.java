@@ -19,8 +19,8 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.snaker.engine.helper.StreamHelper;
-import org.snaker.engine.test.TestSnakerBase;
+import me.zhengjie.helper.StreamHelper;
+import me.zhengjie.test.TestSnakerBase;
 
 /**
  * @author yuqs
@@ -33,7 +33,7 @@ public class TestReject extends TestSnakerBase {
 						.getStreamFromClasspath("test/reject/reject.snaker"));
 		engine.startInstanceById(processId);
 	}
-	
+
 	@Test
 	public void test() {
 		Map<String, Object> args = new HashMap<String, Object>();

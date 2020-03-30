@@ -15,9 +15,9 @@
 package test.query;
 
 import org.junit.Test;
-import org.snaker.engine.access.Page;
-import org.snaker.engine.entity.Task;
-import org.snaker.engine.test.TestSnakerBase;
+import me.zhengjie.access.Page;
+import me.zhengjie.entity.Task;
+import me.zhengjie.test.TestSnakerBase;
 
 /**
  * @author yuqs

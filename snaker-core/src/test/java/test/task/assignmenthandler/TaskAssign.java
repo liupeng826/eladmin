@@ -14,16 +14,16 @@
  */
 package test.task.assignmenthandler;
 
-import org.snaker.engine.Assignment;
-import org.snaker.engine.core.Execution;
-import org.snaker.engine.model.TaskModel;
+import me.zhengjie.Assignment;
+import me.zhengjie.core.Execution;
+import me.zhengjie.model.TaskModel;
 
 /**
  * @author yuqs
  * @since 1.0
  */
 public class TaskAssign extends Assignment {
-	
+
 	public Object assign(TaskModel model, Execution execution) {
         System.out.println(model);
 		System.out.println(execution.getArgs());

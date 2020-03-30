@@ -20,10 +20,10 @@ import java.util.Map;
 import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Test;
-import org.snaker.engine.entity.Order;
-import org.snaker.engine.helper.DateHelper;
-import org.snaker.engine.helper.StreamHelper;
-import org.snaker.engine.test.TestSnakerBase;
+import me.zhengjie.entity.Order;
+import me.zhengjie.helper.DateHelper;
+import me.zhengjie.helper.StreamHelper;
+import me.zhengjie.test.TestSnakerBase;
 
 /**
  * @author yuqs
@@ -35,7 +35,7 @@ public class TestExpire extends TestSnakerBase {
 	public void before() {
 		engine.process().deploy(StreamHelper.getStreamFromClasspath("test/time/expire/process.snaker"));
 	}
-	
+
 	@Test
 	public void test() {
 		System.out.println(DateHelper.parseTime(new DateTime(2014, 4, 6, 16, 41).toDate()));

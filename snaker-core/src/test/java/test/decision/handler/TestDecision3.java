@@ -19,9 +19,9 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.snaker.engine.entity.Order;
-import org.snaker.engine.helper.StreamHelper;
-import org.snaker.engine.test.TestSnakerBase;
+import me.zhengjie.entity.Order;
+import me.zhengjie.helper.StreamHelper;
+import me.zhengjie.test.TestSnakerBase;
 
 /**
  * 测试决策分支流程2：使用transition的expr属性决定后置路线
@@ -34,7 +34,7 @@ public class TestDecision3 extends TestSnakerBase {
 		processId = engine.process().deploy(StreamHelper
 						.getStreamFromClasspath("test/decision/handler/process.snaker"));
 	}
-	
+
 	@Test
 	public void test() {
 		Map<String, Object> args = new HashMap<String, Object>();

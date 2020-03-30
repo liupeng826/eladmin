@@ -20,11 +20,11 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.snaker.engine.access.QueryFilter;
-import org.snaker.engine.entity.Order;
-import org.snaker.engine.entity.Task;
-import org.snaker.engine.helper.StreamHelper;
-import org.snaker.engine.test.TestSnakerBase;
+import me.zhengjie.access.QueryFilter;
+import me.zhengjie.entity.Order;
+import me.zhengjie.entity.Task;
+import me.zhengjie.helper.StreamHelper;
+import me.zhengjie.test.TestSnakerBase;
 
 /**
  * @author yuqs
@@ -36,7 +36,7 @@ public class TestSimple extends TestSnakerBase {
 		processId = engine.process().deploy(StreamHelper.getStreamFromClasspath("test/task/simple/process.snaker"));
 		engine.process().updateType(processId, "预算管理流程");
 	}
-	
+
 	@Test
 	public void test() {
 		Map<String, Object> args = new HashMap<String, Object>();

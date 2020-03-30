@@ -16,9 +16,9 @@ package test.task.interceptor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.snaker.engine.SnakerInterceptor;
-import org.snaker.engine.core.Execution;
-import org.snaker.engine.entity.Task;
+import me.zhengjie.SnakerInterceptor;
+import me.zhengjie.core.Execution;
+import me.zhengjie.entity.Task;
 
 /**
  * @author yuqs
@@ -26,7 +26,7 @@ import org.snaker.engine.entity.Task;
  */
 public class LocalTaskInterceptor implements SnakerInterceptor {
 	private static final Logger log = LoggerFactory.getLogger(LocalTaskInterceptor.class);
-	
+
 	public void intercept(Execution execution) {
 		if(log.isInfoEnabled()) {
 			log.info("LocalTaskInterceptor start...");

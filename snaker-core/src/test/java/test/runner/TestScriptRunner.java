@@ -18,8 +18,8 @@
 package test.runner;
 
 import org.junit.Test;
-import org.snaker.engine.access.ScriptRunner;
-import org.snaker.engine.access.jdbc.JdbcHelper;
+import me.zhengjie.access.ScriptRunner;
+import me.zhengjie.access.jdbc.JdbcHelper;
 
 import java.sql.Connection;
 

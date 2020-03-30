@@ -18,9 +18,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Test;
-import org.snaker.engine.entity.Process;
-import org.snaker.engine.helper.StreamHelper;
-import org.snaker.engine.test.TestSnakerBase;
+import me.zhengjie.entity.Process;
+import me.zhengjie.helper.StreamHelper;
+import me.zhengjie.test.TestSnakerBase;
 
 /**
  * @author yuqs

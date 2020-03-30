@@ -19,9 +19,9 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.snaker.engine.entity.Order;
-import org.snaker.engine.helper.StreamHelper;
-import org.snaker.engine.test.TestSnakerBase;
+import me.zhengjie.entity.Order;
+import me.zhengjie.helper.StreamHelper;
+import me.zhengjie.test.TestSnakerBase;
 
 /**
  * @author yuqs

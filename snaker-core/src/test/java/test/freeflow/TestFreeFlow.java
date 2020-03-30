@@ -20,11 +20,11 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.snaker.engine.entity.Order;
-import org.snaker.engine.entity.Task;
-import org.snaker.engine.helper.StreamHelper;
-import org.snaker.engine.model.TaskModel;
-import org.snaker.engine.test.TestSnakerBase;
+import me.zhengjie.entity.Order;
+import me.zhengjie.entity.Task;
+import me.zhengjie.helper.StreamHelper;
+import me.zhengjie.model.TaskModel;
+import me.zhengjie.test.TestSnakerBase;
 
 /**
  * @author yuqs
@@ -35,7 +35,7 @@ public class TestFreeFlow extends TestSnakerBase {
 	public void before() {
 		processId = engine.process().deploy(StreamHelper.getStreamFromClasspath("test/freeflow/free.snaker"));
 	}
-	
+
 	@Test
 	public void test() {
 		Map<String, Object> args = new HashMap<String, Object>();
@@ -53,7 +53,7 @@ public class TestFreeFlow extends TestSnakerBase {
 		for(Task task : tasks) {
 			engine.task().complete(task.getId(), "1", null);
 		}
-		
+
 //		tasks = engine.createFreeTask(order.getId(), "1", args, tm2);
 //		for(Task task : tasks) {
 //			engine.task().complete(task.getId(), "1", null);

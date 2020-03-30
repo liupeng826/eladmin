@@ -9,7 +9,7 @@ import me.zhengjie.modules.workflow.domain.WfProcess;
 import me.zhengjie.modules.workflow.service.SnakerFlowService;
 import me.zhengjie.modules.workflow.service.WfProcessService;
 import me.zhengjie.modules.workflow.service.dto.WfProcessQueryCriteria;
-import org.snaker.engine.entity.Process;
+import me.zhengjie.entity.Process;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;

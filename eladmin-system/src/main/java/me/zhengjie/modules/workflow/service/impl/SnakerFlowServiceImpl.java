@@ -15,15 +15,15 @@
 
 package me.zhengjie.modules.workflow.service.impl;
 
+import me.zhengjie.entity.*;
+import me.zhengjie.entity.Process;
 import me.zhengjie.modules.workflow.service.SnakerFlowService;
 import org.apache.commons.lang.StringUtils;
-import org.snaker.engine.IProcessService;
-import org.snaker.engine.SnakerEngine;
-import org.snaker.engine.access.Page;
-import org.snaker.engine.access.QueryFilter;
-import org.snaker.engine.entity.Process;
-import org.snaker.engine.entity.*;
-import org.snaker.engine.model.TaskModel.TaskType;
+import me.zhengjie.IProcessService;
+import me.zhengjie.SnakerEngine;
+import me.zhengjie.access.Page;
+import me.zhengjie.access.QueryFilter;
+import me.zhengjie.model.TaskModel.TaskType;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -15,11 +15,11 @@
 package test.query;
 
 import org.junit.Test;
-import org.snaker.engine.access.Page;
-import org.snaker.engine.access.QueryFilter;
-import org.snaker.engine.entity.Task;
-import org.snaker.engine.entity.WorkItem;
-import org.snaker.engine.test.TestSnakerBase;
+import me.zhengjie.access.Page;
+import me.zhengjie.access.QueryFilter;
+import me.zhengjie.entity.Task;
+import me.zhengjie.entity.WorkItem;
+import me.zhengjie.test.TestSnakerBase;
 
 /**
  * @author yuqs
@@ -28,9 +28,9 @@ import org.snaker.engine.test.TestSnakerBase;
 public class TestQueryTask extends TestSnakerBase {
 	@Test
 	public void test() {
-		System.out.println(queryService.getActiveTasks(new Page<Task>(), 
+		System.out.println(queryService.getActiveTasks(new Page<Task>(),
 				new QueryFilter().setOperator("1")));
-		System.out.println(queryService.getWorkItems(new Page<WorkItem>(), 
+		System.out.println(queryService.getWorkItems(new Page<WorkItem>(),
 				new QueryFilter().setOperator("1")));
 	}
 }
