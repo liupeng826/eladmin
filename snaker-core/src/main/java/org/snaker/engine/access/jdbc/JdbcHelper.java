@@ -95,7 +95,7 @@ public abstract class JdbcHelper {
         }
 		dataSource = ds;
 	}
-	
+
 	/**
 	 * 返回数据源dataSource
 	 * @return
@@ -111,7 +111,7 @@ public abstract class JdbcHelper {
 		AssertHelper.notNull(dataSource);
 		return dataSource;
 	}
-	
+
 	/**
      * 返回数据库连接对象
      * @return
@@ -124,7 +124,7 @@ public abstract class JdbcHelper {
 		if(ds != null) return ds.getConnection();
 		return getDataSource().getConnection();
     }
-	
+
 	/**
 	 * 根据返回的对象集合判断是否为单条记录，并返回
 	 * 如果返回无记录，或者超过1条记录，则抛出异常
@@ -138,7 +138,7 @@ public abstract class JdbcHelper {
 		}
 		return results.iterator().next();
 	}
-	
+
 	/**
 	 * 根据元数据ResultSetMetaData、列索引columIndex获取列名称
 	 * @param resultSetMetaData
@@ -153,7 +153,7 @@ public abstract class JdbcHelper {
 		}
 		return name;
 	}
-	
+
 	/**
 	 * 根据ResultSet结果集、index列索引、字段类型requiredType获取指定类型的对象值
 	 * @param rs
@@ -232,7 +232,7 @@ public abstract class JdbcHelper {
 		}
 		return value;
 	}
-	
+
 	/**
 	 * 对于特殊字段类型做特殊处理
 	 * @param rs
@@ -274,7 +274,7 @@ public abstract class JdbcHelper {
 		}
 		return obj;
 	}
-	
+
     /**
      * conn不为空时，关闭conn
      * @param conn

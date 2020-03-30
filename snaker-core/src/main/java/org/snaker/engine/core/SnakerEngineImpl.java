@@ -44,6 +44,7 @@ import org.snaker.engine.model.ProcessModel;
 import org.snaker.engine.model.StartModel;
 import org.snaker.engine.model.TaskModel;
 import org.snaker.engine.model.TransitionModel;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
