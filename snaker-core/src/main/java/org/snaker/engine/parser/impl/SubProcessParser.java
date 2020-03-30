@@ -14,7 +14,7 @@
  */
 package org.snaker.engine.parser.impl;
 
-import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.snaker.engine.helper.ConfigHelper;
 import org.snaker.engine.helper.StringHelper;
 import org.snaker.engine.model.NodeModel;
@@ -34,7 +34,7 @@ public class SubProcessParser extends AbstractNodeParser {
 	protected NodeModel newModel() {
 		return new SubProcessModel();
 	}
-	
+
 	/**
 	 * 解析decisition节点的特有属性expr
 	 */

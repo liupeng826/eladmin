@@ -17,8 +17,8 @@
         <module>eladmin-monitor</module>
         <module>eladmin-generator</module>
         <module>snaker-core</module>
-        <module>snaker-spring</module>
-        <module>snaker-hibernate</module>
+<!--        <module>snaker-spring</module>-->
+<!--        <module>snaker-hibernate</module>-->
     </modules>
 
     <name>EL-ADMIN后台管理系统</name>

@@ -16,7 +16,7 @@ package org.snaker.engine.access;
 
 import java.io.Serializable;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.snaker.engine.helper.AssertHelper;
 
 /**
@@ -26,7 +26,7 @@ import org.snaker.engine.helper.AssertHelper;
  */
 public class QueryFilter implements Serializable {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -8155136377911571881L;
     public static final String ASC = "asc";
@@ -84,7 +84,7 @@ public class QueryFilter implements Serializable {
 	 * exclude ids
 	 */
 	private String[] excludedIds;
-	
+
 	/*********order parameters***********/
 	/**
 	 * 父实例id
@@ -94,7 +94,7 @@ public class QueryFilter implements Serializable {
 	 * 实例编号
 	 */
 	private String orderNo;
-	
+
 	/*********task parameters***********/
 	/**
 	 * 任务类型
@@ -104,7 +104,7 @@ public class QueryFilter implements Serializable {
 	 * 任务参与类型
 	 */
 	private Integer performType;
-	
+
 	public String getProcessId() {
 		return processId;
 	}

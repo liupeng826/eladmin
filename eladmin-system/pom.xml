@@ -24,16 +24,16 @@
             <artifactId>snaker-core</artifactId>
             <version>${snaker.version}</version>
         </dependency>
-        <dependency>
-            <groupId>me.zhengjie</groupId>
-            <artifactId>snaker-spring</artifactId>
-            <version>${snaker.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>me.zhengjie</groupId>
-            <artifactId>snaker-hibernate</artifactId>
-            <version>${snaker.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>me.zhengjie</groupId>-->
+<!--            <artifactId>snaker-spring</artifactId>-->
+<!--            <version>${snaker.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>me.zhengjie</groupId>-->
+<!--            <artifactId>snaker-hibernate</artifactId>-->
+<!--            <version>${snaker.version}</version>-->
+<!--        </dependency>-->
 
         <!--    代码生成模块    -->
         <dependency>

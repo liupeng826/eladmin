@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
 public class ConfigHelper
 {
     private static final transient Logger log = LoggerFactory.getLogger(ConfigHelper.class);
-    
+
     /**
      * 常用配置属性文件名称.
      */
@@ -62,7 +62,7 @@ public class ConfigHelper
         }
         return getProperties().getProperty(key);
     }
-    
+
     /**
      * 根据key获取配置的数字value值
      * @param key
@@ -80,7 +80,7 @@ public class ConfigHelper
     public static void loadProperties(Properties props) {
         properties = props;
     }
-    
+
     /**
      * 根据指定的文件名称，从类路径中加载属性文件，构造Properties对象
      * @param filename 属性文件名称

@@ -14,7 +14,7 @@
  */
 package org.snaker.engine.access.dialect;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.snaker.engine.access.Page;
 import org.snaker.engine.helper.StringHelper;
 

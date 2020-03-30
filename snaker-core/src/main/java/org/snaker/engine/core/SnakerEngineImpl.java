@@ -44,12 +44,17 @@ import org.snaker.engine.model.ProcessModel;
 import org.snaker.engine.model.StartModel;
 import org.snaker.engine.model.TaskModel;
 import org.snaker.engine.model.TransitionModel;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 基本的流程引擎实现类
  * @author yuqs
  * @since 1.0
  */
+@Service
+@Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class SnakerEngineImpl implements SnakerEngine {
 	private static final Logger log = LoggerFactory.getLogger(SnakerEngineImpl.class);
 	/**
@@ -76,7 +81,7 @@ public class SnakerEngineImpl implements SnakerEngine {
 	 * 管理业务类
 	 */
 	protected IManagerService managerService;
-	
+
 	/**
 	 * 根据serviceContext上下文，查找processService、orderService、taskService服务
 	 */
@@ -87,7 +92,7 @@ public class SnakerEngineImpl implements SnakerEngine {
 		orderService = ServiceContext.find(IOrderService.class);
 		taskService = ServiceContext.find(ITaskService.class);
 		managerService = ServiceContext.find(IManagerService.class);
-		
+
 		/*
 		 * 无spring环境，DBAccess的实现类通过服务上下文获取
 		 */
@@ -117,7 +122,7 @@ public class SnakerEngineImpl implements SnakerEngine {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * 注入dbAccess
 	 * @param access
@@ -144,7 +149,7 @@ public class SnakerEngineImpl implements SnakerEngine {
 		AssertHelper.notNull(queryService);
 		return queryService;
 	}
-	
+
 	/**
 	 * 获取实例服务
 	 * @since 1.2.2
@@ -162,7 +167,7 @@ public class SnakerEngineImpl implements SnakerEngine {
 		AssertHelper.notNull(taskService);
 		return taskService;
 	}
-	
+
 	/**
 	 * 获取管理服务
 	 * @since 1.4
@@ -171,7 +176,7 @@ public class SnakerEngineImpl implements SnakerEngine {
 		AssertHelper.notNull(managerService);
 		return managerService;
 	}
-	
+
 	/**
 	 * 根据流程定义ID启动流程实例
 	 */
@@ -194,17 +199,17 @@ public class SnakerEngineImpl implements SnakerEngine {
 		Process process = process().getProcessById(id);
 		process().check(process, id);
 		Execution execution = execute(process, operator, args, null, null);
-		
+
 		if(process.getModel() != null) {
 			StartModel start = process.getModel().getStart();
 			if(start != null) {
 				start.execute(execution);
 			}
 		}
-		
+
 		return execution.getOrder();
 	}
-	
+
 	/**
 	 * 根据流程名称启动流程实例
 	 * @since 1.3
@@ -240,16 +245,16 @@ public class SnakerEngineImpl implements SnakerEngine {
 		Process process = process().getProcessByVersion(name, version);
 		process().check(process, name);
 		Execution execution = execute(process, operator, args, null, null);
-		
+
 		if(process.getModel() != null) {
 			StartModel start = process.getModel().getStart();
 			AssertHelper.notNull(start, "指定的流程定义[name=" + name + ", version=" + version + "]没有开始节点");
 			start.execute(execution);
 		}
-		
+
 		return execution.getOrder();
 	}
-	
+
 	/**
 	 * 根据父执行对象启动子流程实例（用于启动子流程）
 	 */
@@ -257,13 +262,13 @@ public class SnakerEngineImpl implements SnakerEngine {
 		Process process = execution.getProcess();
 		StartModel start = process.getModel().getStart();
 		AssertHelper.notNull(start, "流程定义[id=" + process.getId() + "]没有开始节点");
-		
-		Execution current = execute(process, execution.getOperator(), execution.getArgs(), 
+
+		Execution current = execute(process, execution.getOperator(), execution.getArgs(),
 				execution.getParentOrder().getId(), execution.getParentNodeName());
 		start.execute(current);
 		return current.getOrder();
 	}
-	
+
 	/**
 	 * 创建流程实例，并返回执行对象
 	 * @param process 流程定义
@@ -273,7 +278,7 @@ public class SnakerEngineImpl implements SnakerEngine {
 	 * @param parentNodeName 启动子流程的父流程节点名称
 	 * @return Execution
 	 */
-	private Execution execute(Process process, String operator, Map<String, Object> args, 
+	private Execution execute(Process process, String operator, Map<String, Object> args,
 			String parentId, String parentNodeName) {
 		Order order = order().createOrder(process, operator, args, parentId, parentNodeName);
 		if(log.isDebugEnabled()) {
@@ -313,7 +318,7 @@ public class SnakerEngineImpl implements SnakerEngine {
 		}
 		return execution.getTasks();
 	}
-	
+
 	/**
 	 * 根据任务主键ID，操作人ID，参数列表执行任务，并且根据nodeName跳转到任意节点
 	 * 1、nodeName为null时，则驳回至上一步处理
@@ -339,7 +344,7 @@ public class SnakerEngineImpl implements SnakerEngine {
 
 		return execution.getTasks();
 	}
-	
+
 	/**
 	 * 根据流程实例ID，操作人ID，参数列表按照节点模型model创建新的自由任务
 	 */
@@ -353,7 +358,7 @@ public class SnakerEngineImpl implements SnakerEngine {
 		execution.setOperator(operator);
 		return task().createTask(model, execution);
 	}
-	
+
 	/**
 	 * 根据任务主键ID，操作人ID，参数列表完成任务，并且构造执行对象
 	 * @param taskId 任务id

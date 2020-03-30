@@ -14,9 +14,9 @@
  */
 package org.snaker.engine.helper;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.codehaus.jackson.map.ObjectMapper;
 
 /**
  * json处理帮助类
@@ -43,7 +43,7 @@ public class JsonHelper {
 			return "";
 		}
 	}
-	
+
 	/**
 	 * 根据指定类型解析json字符串，并返回该类型的对象
 	 * @param jsonString

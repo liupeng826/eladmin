@@ -14,10 +14,7 @@
  */
 package org.snaker.engine.impl;
 
-import java.util.Date;
-import java.util.Map;
-
-import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.snaker.engine.SnakerInterceptor;
@@ -28,6 +25,9 @@ import org.snaker.engine.model.TaskModel;
 import org.snaker.engine.scheduling.IScheduler;
 import org.snaker.engine.scheduling.JobEntity;
 import org.snaker.engine.scheduling.JobEntity.JobType;
+
+import java.util.Date;
+import java.util.Map;
 
 /**
  * 时限控制拦截器
@@ -50,10 +50,12 @@ public class SchedulerInterceptor implements SnakerInterceptor {
 	 * 时限控制拦截方法
 	 */
 	public void intercept(Execution execution) {
-		if(!isScheduled) return;
+		if(!isScheduled) {
+            return;
+        }
 		for(Task task : execution.getTasks()) {
-			String id = execution.getProcess().getId() 
-					+ "-" + execution.getOrder().getId() 
+			String id = execution.getProcess().getId()
+					+ "-" + execution.getOrder().getId()
 					+ "-" + task.getId();
 			Date expireDate = task.getExpireDate();
 			if(expireDate != null) {
@@ -65,7 +67,7 @@ public class SchedulerInterceptor implements SnakerInterceptor {
 			}
 		}
 	}
-	
+
 	public void schedule(String id, Task task, Date startDate, int jobType, Map<String, Object> args) {
 		try {
 		    JobEntity entity = new JobEntity(id, task, startDate, args);
@@ -83,7 +85,7 @@ public class SchedulerInterceptor implements SnakerInterceptor {
 			log.info("scheduler failed.task is:" + task);
 		}
 	}
-	
+
 	private void schedule(JobEntity entity) {
 	    if(scheduler == null) {
 	    	scheduler = ServiceContext.getContext().find(IScheduler.class);

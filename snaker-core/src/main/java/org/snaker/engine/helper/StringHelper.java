@@ -14,7 +14,7 @@
  */
 package org.snaker.engine.helper;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.snaker.engine.SnakerException;
 
 /**
@@ -30,7 +30,7 @@ public class StringHelper {
 	public static String getPrimaryKey() {
 		return java.util.UUID.randomUUID().toString().replace("-", "");
 	}
-	
+
 	/**
 	 * 判断字符串是否为空
 	 * @param str
@@ -39,7 +39,7 @@ public class StringHelper {
 	public static boolean isEmpty(String str) {
 		return str == null || str.length() == 0;
 	}
-	
+
 	/**
 	 * 判断字符串是否为非空
 	 * @param str
@@ -48,7 +48,7 @@ public class StringHelper {
 	public static boolean isNotEmpty(String str) {
 		return !isEmpty(str);
 	}
-	
+
 	/**
 	 * 根据字符串数组返回逗号分隔的字符串值
 	 * @param strs
@@ -63,7 +63,7 @@ public class StringHelper {
 		buffer.deleteCharAt(buffer.length() - 1);
 		return buffer.toString();
 	}
-	
+
 	/**
 	 * xml内容特殊符号替换
 	 * @param xml
@@ -78,7 +78,7 @@ public class StringHelper {
 		content = content.replaceAll("\n", "</br>");
 		return content;
 	}
-	
+
 	/**
 	 * 构造排序条件
 	 * @param order
@@ -99,7 +99,7 @@ public class StringHelper {
 		orderStr.deleteCharAt(orderStr.length() - 1);
 		return orderStr.toString();
 	}
-	
+
 	/**
 	 * 简单字符串匹配方法，支持匹配类型为：
 	 * *what *what* what*
