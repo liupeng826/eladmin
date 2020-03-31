@@ -75,12 +75,12 @@
         </dependency>
         <!--Spring boot end-->
 
-        <!-- snakerflow工作流 -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.github.snakerflow-starter</groupId>-->
-        <!--            <artifactId>snakerflow-spring-boot-starter</artifactId>-->
-        <!--            <version>1.0.1</version>-->
-        <!--        </dependency>-->
+        <!--snakerflow工作流-->
+        <dependency>
+            <groupId>com.github.snakerflow-starter</groupId>
+            <artifactId>snakerflow-spring-boot-starter</artifactId>
+            <version>1.0.1</version>
+        </dependency>
 
         <!--spring2.0集成redis所需common-pool2-->
         <dependency>
